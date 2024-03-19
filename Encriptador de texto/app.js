@@ -31,15 +31,33 @@ function decript(texto) {
     return texto;
 }
 
+
 function btn_cript(){
     const texto = cript(textArea.value);
     mensagem.value = texto;
     textArea.value = "";
+    let fundo = document.getElementsByClassName('mensagem')[0];
+    fundo.style.backgroundImage = 'none';
 }
 
 function btn_decript(){
     const texto = decript(textArea.value);
     mensagem.value = texto;
     textArea.value = "";
+    let fundo = document.getElementsByClassName('mensagem')[0];
+    fundo.style.backgroundImage = 'none';
 }
 
+function btn_copiar(id){
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    try {
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        console.log('Texto copiado com sucesso. ' + r);
+    } catch (err) {
+        console.log('Não foi possível copiar!');
+    }
+}
