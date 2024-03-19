@@ -1,9 +1,3 @@
-// A letra "e" é convertida para "enter"
-// A letra "i" é convertida para "imes"
-// A letra "a" é convertida para "ai"
-// A letra "o" é convertida para "ober"
-// A letra "u" é convertida para "ufat"
-
 const textArea = document.querySelector(".text-area");
 const mensagem = document.querySelector(".mensagem");
 
@@ -31,7 +25,6 @@ function decript(texto) {
     return texto;
 }
 
-
 function btn_cript(){
     const texto = cript(textArea.value);
     mensagem.value = texto;
@@ -56,8 +49,10 @@ function btn_copiar(id){
     try {
         document.execCommand('copy');
         window.getSelection().removeAllRanges();
-        console.log('Texto copiado com sucesso. ' + r);
+        console.log("Texto copiado com sucesso. " + r);
+        alert("Texto copiado com sucesso.");
     } catch (err) {
-        console.log('Não foi possível copiar!');
+        console.log("Não foi possível copiar!");
+        alert("Não foi possível copiar!");
     }
 }

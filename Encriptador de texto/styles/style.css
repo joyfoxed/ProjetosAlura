@@ -52,7 +52,7 @@ main {
     margin-bottom: 50px;
     margin-left: 10%;
     margin-right: 10%;
-    
+    justify-content: center;
 }
 
 .informacao {
