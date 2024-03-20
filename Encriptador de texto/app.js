@@ -41,18 +41,14 @@ function btn_decript(){
     fundo.style.backgroundImage = 'none';
 }
 
-function btn_copiar(id){
-    var r = document.createRange();
-    r.selectNode(document.getElementById(id));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
-    try {
+document.getElementById('3').addEventListener('click', function() {
+    var text = document.getElementById('2');
+    text.select();
+    try{
         document.execCommand('copy');
-        window.getSelection().removeAllRanges();
-        console.log("Texto copiado com sucesso. " + r);
+        console.log("Texto copiado com sucesso. " + text);
         alert("Texto copiado com sucesso.");
     } catch (err) {
         console.log("Não foi possível copiar!");
-        alert("Não foi possível copiar!");
     }
-}
+  })
